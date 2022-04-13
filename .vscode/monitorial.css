@@ -1,0 +1,31 @@
+body {
+
+    background-color:rgba(143, 246, 102, 0.654);
+}
+
+table {
+
+    
+    float:left;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-left: 150px;
+    margin-top: 70px;
+    font-size: 100%;
+    color:rgb(1, 16, 30);
+    
+
+}
+h1 {
+
+    float: left;
+    color: rgb(17, 1, 1);
+    font-family: sans-serif;
+    margin-left: 150px;
+    margin-top: 12px;
+    font-size: 150%;
+    
+
+
+
+
+}
