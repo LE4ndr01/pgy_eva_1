@@ -316,4 +316,16 @@ p{
   outline:0;
   border: 1px solid #97d848;
 }
+/*boton donar*/
+.contenedor {
+  width: 320px;
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 10px;
+  background-color: #e5e5e5;
+}
 
+.combo {
+  vertical-align: middle;
+  width: 50px;
+}
