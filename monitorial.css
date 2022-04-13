@@ -1,6 +1,6 @@
 body {
 
-    background-color:rgba(143, 246, 102, 0.654);
+    background-color:rgba(93, 192, 53, 0.459);
 }
 
 table {
@@ -23,4 +23,10 @@ h1 {
     margin-left: 150px;
     margin-top: 12px;
     font-size: 150%;
+}
+div{
+    background-color: red !important;
+}
+center{
+    background-color: red;
 }
