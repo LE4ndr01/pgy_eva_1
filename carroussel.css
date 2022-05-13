@@ -46,9 +46,9 @@
   
     background-color: #fff;margin-top: 4px;margin-bottom: 4px;height: 0.2px;
   }
-  .carousel-item  img{
-    width: 500%;
-    height: 500%;
+  .carousel-inner img{
+    width: 200%;
+    max-width: 460px%;
     
   
   }
