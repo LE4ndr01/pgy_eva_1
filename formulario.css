@@ -94,6 +94,14 @@ input:fouc~.barra::before{
 	width: 100%;
 }
 
+.warnings{
+	width: 200px;
+	text-align: center;
+	margin: auto;
+	color:rgb(255, 0, 0);
+	padding-top: 20px;
+}
+
 button{
 	font-family: 'roboto';
 	background: #649173;  
