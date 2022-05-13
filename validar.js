@@ -1,17 +1,46 @@
-const formulario = document.getElementById('formulario');
-const inputs = document.querySelectorAll('#formulario input');
-
-const expresiones = {
-    nombre:  /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
-} 
-
-var nombre = document.getElementById('Nombre');
-
-
-function enviarFormulario(){
-    console.log('Enviando...')
-
-    return false;
-}
+var app = new Vue({
+    el: '#form1',
+    data: function () {
+      return {
+      email : "",
+      emailBlured : false,
+      valid : false,
+      submitted : false,
+      password:"",
+      passwordBlured:false
+      }
+    },
+  
+    methods:{
+  
+      validate : function(){
+  this.emailBlured = true;
+  this.passwordBlured = true;
+  if( this.validEmail(this.email) && this.validPassword(this.password)){
+  this.valid = true;
+  }
+  },
+  
+  validEmail : function(email) {
+     
+  var re = /(.+)@(.+){2,}\.(.+){2,}/;
+  if(re.test(email.toLowerCase())){
+    return true;
+  }
+  
+  },
+  
+  validPassword : function(password) {
+     if (password.length > 7) {
+      return true;
+     }
+  },
+  
+  submit : function(){
+  this.validate();
+  if(this.valid){
+  this.submitted = true;
+  }
+  }
+    }
+  });
