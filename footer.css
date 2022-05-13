@@ -54,3 +54,8 @@
         .divider{
             border-top: 2px solid rgba(189, 196, 203, 0.5);;
         }
+
+        a{
+            text-decoration: none;
+            color: #646771;
+        }
