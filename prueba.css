@@ -1,1 +1,78 @@
-body{background: #000}.card{border: none;height: 320px}.forms-inputs{position: relative}.forms-inputs span{position: absolute;top:-18px;left: 10px;background-color: #fff;padding: 5px 10px;font-size: 15px}.forms-inputs input{height: 50px;border: 2px solid #eee}.forms-inputs input:focus{box-shadow: none;outline: none;border: 2px solid #000}.btn{height: 50px}.success-data{display: flex;flex-direction: column}.bxs-badge-check{font-size: 90px}
+* {
+    padding: 0;
+    margin: 0;
+}
+li {
+    list-style: none;
+}
+.check li {
+    list-style: none;
+    height: 60px;
+    background-color: #e2f2ff;
+    height: 100px;
+    line-height: 50px;
+    margin-top: 10px;
+}
+#navlist {
+    width: 800px;
+    /*margin: 0px auto 0px auto;*/
+    height: 23px;
+}
+#navlist ul li {
+    float: left;
+    height: 23px;
+    line-height: 26px;
+}
+.navlist_red_left {
+    background-image: url(../images/taobao_bg.png);
+    background-repeat: no-repeat;
+    background-position: -12px -92px;
+    width: 3px;
+}
+.navlist_red {
+    background-color: #ff6600;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFF;
+    width: 130px;
+}
+.navlist_red_arrow {
+    background-color: #ff6600;
+    background-image: url(../images/taobao_bg.png);
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    width: 13px;
+}
+.navlist_gray {
+    background-color: #e4e4e4;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    width: 150px;
+}
+.navlist_gray_arrow {
+    background-color: #e4e4e4;
+    background-image: url(../images/taobao_bg.png);
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    width: 13px;
+}
+.navlist_gray_right {
+    background-image: url(../images/taobao_bg.png);
+    background-repeat: no-repeat;
+    background-position: -12px -138px;
+    width: 3px;
+}
+.num_input {
+    border: solid 1px #666;
+    width: 50px;
+    height: 25px;
+    text-align: center;
+}
+#delete,#deletes,#deletees {
+    width: 90px;
+    height: 56px;
+    border-radius: 5px;
+    border: 1px solid;
+}
