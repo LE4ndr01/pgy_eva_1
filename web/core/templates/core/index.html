@@ -35,31 +35,31 @@
       <div class="collapse navbar-collapse d-flex justify-content-end" id="collapsibleNavbar">
     <div class="collapse navbar-collapse d-flex justify-content-end" id="collapsibleNavbar">
         <ul class="navbar-nav">
-            <li class="nav-item active"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item active"><a class="nav-link" href="{% url 'inicio' %}">Inicio</a></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                   aria-expanded="false">Tienda</a>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" href="ventasproductos.html">Productos</a>
-                    <a class="dropdown-item" href="seguimiento.html">Seguimiento</a>
+                    <a class="dropdown-item" href="{% url 'venta' %}">Productos</a>
+                    <a class="dropdown-item" href="{% url 'seguimiento' %}">Seguimiento</a>
                     <a class="dropdown-item" href="#"></a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#"></a>
                   </div>
                   <a href="https://le4ndr01.github.io/pgy_eva_1/index.html" title="Jardineria" class="logo" style="height: 110px;"> 
                     
-            <li class="nav-item"><a class="nav-link" href="ForContacto.html">Contacto</a></li>
-            <li class="nav-item"><a class="nav-link" href="">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="{%url 'contacto'%}">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link" href="{%url 'nosotros'%}">Nosotros</a></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                   aria-expanded="false">Mi cuenta</a>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" href="dashuser.html">Mi Cuenta</a>
-                    <a class="dropdown-item" href="formulario.html">Iniciar sesion</a>
-                    <a class="dropdown-item" href="index.html">Salir</a>
-                    <a class="dropdown-item" href="formulario.html"></a>
+                    <a class="dropdown-item" href="{% url 'dashuser' %}">Mi Cuenta</a>
+                    <a class="dropdown-item" href="{% url 'formulario' %}">Iniciar sesion</a>
+                    <a class="dropdown-item" href="{% url 'inicio' %}">Salir</a>
+                    <a class="dropdown-item" href="{% url 'formulario' %}"></a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="ccuenta.html">Crear Cuenta</a>
+                    <a class="dropdown-item" href="{% url 'crear' %}">Crear Cuenta</a>
             
                   </div>  
             
@@ -133,8 +133,8 @@
          
                 <h5 class="heading">Productos</h5>
                 <ul >
-                    <li><a href="ventasproductos.html">Nuestros productos</a></li>
-                    <li><a href="seguimiento.html">Seguimiento en linea</a></li>
+                    <li><a href="{% url 'venta' %}">Nuestros productos</a></li>
+                    <li><a href="{% url 'seguimiento' %}">Seguimiento en linea</a></li>
                     <li><a href="">Donaciones</a></li>
                     <li></li>
                 </ul>
@@ -146,9 +146,9 @@
          
                 <h5 class="heading">Nosotros</h5>
                 <ul class="card-text">
-                    <li><a href="">Inicio</a></li>
-                    <li><a href="">Nosotros</a></li>
-                    <li><a href="formulario.css">Contacto</a></li>
+                    <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                    <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
+                    <li><a href="{% url 'contacto' %}">Contacto</a></li>
                     
                 </ul>
          
