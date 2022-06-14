@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width", initial-scale="1.0">
-    {% load static %}
-    <link rel="stylesheet" href= {% static 'core/estilos/cc.css'%}>
+    <link rel="stylesheet" href="estilos/cc.css">
 </head>
 <body>
+  {% load static %}
     <form action="" method="POST" id="form">
       <div class="form">
         <center><h1>Registro</h1></center>
@@ -23,7 +23,7 @@
             <label for="">Contraseña</label>
           </div>
           <button type="submit">Crear</button>
-          <center><a style="color: rgb(0, 0, 0) ; text-decoration:none" href="formulario.html" onmouseover="this.style.color='gray'" onmouseout="this.style.color='black'">Iniciar sesión
+          <center><a style="color: rgb(0, 0, 0) ; text-decoration:none" href="{% url 'formulario'%}" onmouseover="this.style.color='gray'" onmouseout="this.style.color='black'">Iniciar sesión
       </div>
     </form>
 </body>
