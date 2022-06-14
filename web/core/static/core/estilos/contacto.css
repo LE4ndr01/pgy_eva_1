@@ -4,7 +4,7 @@
 
 body {
 	font-family: 'Roboto';
-	background: #1D976C;  
+	background: #000000;  
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);  
     /* Chrome 10-25, Safari 5.1-6 */
@@ -22,9 +22,12 @@ hi{
 
 form{
     background: #fff;
-    padding: 40px 0;
+    padding: 10px 0;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.8);
     border-radius: 10px;
+	margin-left: 30%;
+	margin-right: 30%;
+	margin-top: 5%;
 }
 
 .form{
