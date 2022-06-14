@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import Producto
 
 
 # Create your views here.
@@ -10,7 +10,11 @@ def nosotros (request):
 def contacto (request):
     return render(request, 'core/forcontacto.html')
 def venta (request):
-    return render(request, 'core/ventasproductos.html')
+    Productos = Producto.objects.all()
+    data ={
+        'productos':Productos
+    }
+    return render(request, 'core/ventasproductos.html', data)
 def seguimiento (request):
     return render(request, 'core/seguimiento.html')
 def dashuser (request):

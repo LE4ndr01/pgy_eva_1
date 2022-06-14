@@ -5,16 +5,19 @@ body {
 }
 
 nav {
-  background: #0f6f6f
+  background: #0f6f6f;
+  
 }
 
 .nav-link {
   font-size: 1.2em;
   color: #ffffff !important;
-  font-weight: 500
+  font-weight: 500;
+  text-align: center;
 }
 
 .active .nav-link {
   border-bottom: 1px solid #00ffc8;
   color: #000000 !important
 }
+  

@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import inicio, nosotros, contacto, venta, seguimiento, dashuser, ordenes, formulario, crear
+from .views import inicio, nosotros, contacto,\
+                    venta, seguimiento, dashuser, ordenes, formulario, crear
 
 
 urlpatterns = [
