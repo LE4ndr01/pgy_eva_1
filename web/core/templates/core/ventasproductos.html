@@ -27,8 +27,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!-- navbar -->
     
+    {% load static %}
 <nav class="navbar sticky-top navbar-light navbar-expand-lg"> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span class="navbar-toggler-icon"></span> </button>
-    <link rel="stylesheet" href="estilos/estilo.css">
+    <link rel="stylesheet" href={% static 'core/estilos/estilo.css' %}>
     <a href="https://le4ndr01.github.io/pgy_eva_1/index.html" title="Jardineria" class="logo"> 
         <img align="left" src="https://w7.pngwing.com/pngs/403/286/png-transparent-gardening-nursery-garden-design-arborist-gazon-leaf-logo-grass.png" height="4.5%" width="4.5%" style="border-radius: 100%;margin: 5px;"> </a>
       <div class="collapse navbar-collapse d-flex justify-content-end" id="collapsibleNavbar">
@@ -36,7 +37,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
-                    <img src="iconos/cart.svg" class="nav-link dropdown-toggle img-fluid" height="70px"
+                    <img src={% static 'core/iconos/cart.svg' %} class="nav-link dropdown-toggle img-fluid" height="70px"
                         width="70px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false"></img>
                     <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
@@ -60,7 +61,7 @@
             </ul>
         </div>
         <ul class="navbar-nav">
-            <li class="nav-item active"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item active"><a class="nav-link" href="{%url 'inicio'%}">Inicio</a></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                   aria-expanded="false">Tienda</a>
@@ -96,7 +97,7 @@
   <!-- navbar -->
 
     <div class="container mb-5 mt-5">
-        <link rel="stylesheet" href="estilos/ventas.css">
+        <link rel="stylesheet" href="{% static 'core/estilos/ventas.css'%}">
         <div class="row">
             <div class="col-md-4">
                 <div class="card mt-3">
@@ -104,9 +105,9 @@
     
                        <div class="image-container">
     
-                         <img class="xyz rounded" src="imagenes/flor1.jpg" width="200">
+                         <img class="xyz rounded" src="{% static 'core/imagenes/flor1.jpg'%}" width="200">
     
-                        <img class="xyz-replacement rounded" src="imagenes/flor1.jpg" width="200">
+                        <img class="xyz-replacement rounded" src="{% static 'core/imagenes/flor1.jpg'%}"" width="200">
                            
                        </div>
     
@@ -126,9 +127,9 @@
     
                         <div class="image-container">
     
-                         <img class="xyz rounded" src="imagenes/cortadora2.jpg" width="200">
+                         <img class="xyz rounded" src={% static 'core/imagenes/cortadora2.jpg' %} width="200">
     
-                        <img class="xyz-replacement rounded" src="imagenes/cortadora3.jpg" width="200">
+                        <img class="xyz-replacement rounded" src={% static 'core/imagenes/cortadora3.jpg' %} width="200">
                            
                        </div>
                     
@@ -152,9 +153,9 @@
     
                        <div class="image-container">
     
-                         <img class="xyz rounded" src="imagenes/macetero1.jpg" width="200">
+                         <img class="xyz rounded" src={% static 'core/imagenes/macetero1.jpg' %} width="200">
     
-                        <img class="xyz-replacement rounded" src="imagenes/macetero1.jpg" width="200">
+                        <img class="xyz-replacement rounded" src={% static 'core/imagenes/macetero1.jpg' %} width="200">
                            
                        </div>
     
@@ -183,7 +184,7 @@
 </html>
 <!--   Footer -->
 <div class="container-fluid mt-5">
-  <link rel="stylesheet" href="estilos/footer.css">  
+  <link rel="stylesheet" href="{% static 'core/estilos/footer.css'%}">  
 <div class="card mx-5">
 <div class="row mb-4 ">
     
@@ -213,8 +214,8 @@
  
         <h5 class="heading">Productos</h5>
         <ul >
-            <li><a href="ventasproductos.html">Nuestros productos</a></li>
-            <li><a href="seguimiento.html">Seguimiento en linea</a></li>
+            <li><a href="{% url 'venta'%}">Nuestros productos</a></li>
+            <li><a href="{% url 'seguimiento%}">Seguimiento en linea</a></li>
             <li><a href="">Donaciones</a></li>
             <li></li>
         </ul>
@@ -226,9 +227,9 @@
  
         <h5 class="heading">Nosotros</h5>
         <ul class="card-text">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="nosotros.html">Nosotros</a></li>
-            <li><a href="formulario.css">Contacto</a></li>
+            <li><a href="{% url 'inicio' %}">Inicio</a></li>
+            <li><a href="{% url 'nosotros'%}">Nosotros</a></li>
+            <li><a href="{% url 'formulario'%}">Contacto</a></li>
             
         </ul>
  
@@ -237,13 +238,13 @@
     <div class="col-md-2 col-sm-4 col-xs-4">
  
         <h5 class="heading">Contacto</h5>
-        <p><i><img src="iconos/geo-alt-fill.svg" alt=""></i> Concha y Toro 1022,Puente Alto,Chile</p>
+        <p><i><img src="{% static 'core/iconos/geo-alt-fill.svg'%}" alt=""></i> Concha y Toro 1022,Puente Alto,Chile</p>
         <p>
-            <i><img src="iconos/envelope-fill.svg" alt=""></i>
+            <i><img src="{% static 'core/iconos/envelope-fill.svg'%}" alt=""></i>
             info@example.com
           </p>
-          <p><i><img src="iconos/phone-fill.svg" alt="telefono"></i> + 56 52 623 623</p>
-          <p><i><img src="iconos/telephone-fill.svg" alt=""></i> + 56 22 536 523</p>    
+          <p><i><img src="{% static 'core/iconos/phone-fill.svg'%}" alt="telefono"></i> + 56 52 623 623</p>
+          <p><i><img src="{% static 'core/iconos/telephone-fill.svg'%}" alt=""></i> + 56 22 536 523</p>    
  
     </div>
 </div>
@@ -259,7 +260,7 @@
     
     <div class="pull-left">
         
-        <p><i class="fa fa-copyright"></i> © 2022 <a href="index.html">Jardineria.com</a></p>
+        <p><i class="fa fa-copyright"></i> © 2022 <a href="{% url 'inicio'%}">Jardineria.com</a></p>
         
     </div>
     
