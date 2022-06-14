@@ -11,6 +11,7 @@
     
 </head>
 <body>
+<<<<<<< HEAD
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
@@ -27,6 +28,94 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+=======
+    
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- navbar -->
+    
+    {% load static %}
+<nav class="navbar sticky-top navbar-light navbar-expand-lg"> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span class="navbar-toggler-icon"></span> </button>
+    <link rel="stylesheet" href={% static 'core/estilos/estilo.css' %}>
+    <a href="https://le4ndr01.github.io/pgy_eva_1/index.html" title="Jardineria" class="logo"> 
+        <img align="left" src="https://w7.pngwing.com/pngs/403/286/png-transparent-gardening-nursery-garden-design-arborist-gazon-leaf-logo-grass.png" height="4.5%" width="4.5%" style="border-radius: 100%;margin: 5px;"> </a>
+      <div class="collapse navbar-collapse d-flex justify-content-end" id="collapsibleNavbar">
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="collapsibleNavbar">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <img src={% static 'core/iconos/cart.svg' %} class="nav-link dropdown-toggle img-fluid" height="70px"
+                        width="70px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false"></img>
+                    <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                        <table id="lista-carrito" class="table">
+                            <thead>
+                                <tr>
+                                    <th>Imagen</th>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+
+                        <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
+                        <a href="compra.html" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
+                            Compra</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <ul class="navbar-nav">
+            <li class="nav-item active"><a class="nav-link" href="{%url 'inicio'%}">Inicio</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                  aria-expanded="false">Tienda</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="ventasproductos.html">Productos</a>
+                    <a class="dropdown-item" href="seguimiento.html">Seguimiento</a>
+                    <a class="dropdown-item" href="#"></a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#"></a>
+                  </div>
+                  <a href="https://le4ndr01.github.io/pgy_eva_1/index.html" title="Jardineria" class="logo" style="height: 110px;"> 
+                    
+            <li class="nav-item"><a class="nav-link" href="ForContacto.html">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                  aria-expanded="false">Mi cuenta</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="dashuser.html">Mi Cuenta</a>
+                    <a class="dropdown-item" href="formulario.html">Iniciar sesion</a>
+                    <a class="dropdown-item" href="index.html">Salir</a>
+                    <a class="dropdown-item" href="formulario.html"></a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="ccuenta.html">Crear Cuenta</a>
+            
+                  </div>   
+            
+        </ul>
+        
+    </div>
+</nav>
+  
+>>>>>>> f1f9269a696a6a7bab74a60ee185070c0f73ca75
   <!-- navbar -->
 
      <!-- navbar -->
@@ -83,7 +172,11 @@
     {% load humanize %}
 <span>
     <div class="container mb-5 mt-5">
+<<<<<<< HEAD
         {% for p in productos %}
+=======
+        <link rel="stylesheet" href="{% static 'core/estilos/ventas.css'%}">
+>>>>>>> f1f9269a696a6a7bab74a60ee185070c0f73ca75
         <div class="row">
             
             <div class="col-md-4">
@@ -94,6 +187,7 @@
                             {% if p.imagen %}
                             <img class="xyz rounded" src="{{p.imagen.url}}" width="200">
     
+<<<<<<< HEAD
                             <img class="xyz-replacement rounded" src={{p.imagen.url}} width="200">
                             {% endif %}
                         </div>
@@ -102,6 +196,68 @@
                         <h5>{{p.nombre | title}}</h5>
                         <div class="mt-1 info"> <span class="text1 d-block">{{ p.descripcion }}</span> <span class="text1">cleansing water. 125 ml </span> </div>
                         <div class=" cost mt-3 text-dark"> <span>${{ p.precio}}</span>
+=======
+                         <img class="xyz rounded" src="{% static 'core/imagenes/flor1.jpg'%}" width="200">
+    
+                        <img class="xyz-replacement rounded" src="{% static 'core/imagenes/flor1.jpg'%}"" width="200">
+                           
+                       </div>
+    
+                        
+                        <h5>FLOR DE PRIMAVERA</h5>
+                        <div class="mt-1 info"> <span class="text1 d-block">Garnier Pure Active Miceller</span> <span class="text1">cleansing water. 125 ml </span> </div>
+                        <div class=" cost mt-3 text-dark"> <span>$18.000</span>
+                            <div class=" star mt-3 align-items-center"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                        </div>
+                    </div>
+                    <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mt-3">
+                    <div class="product-1 align-items-center p-2 text-center"> 
+    
+                        <div class="image-container">
+    
+                         <img class="xyz rounded" src={% static 'core/imagenes/cortadora2.jpg' %} width="200">
+    
+                        <img class="xyz-replacement rounded" src={% static 'core/imagenes/cortadora3.jpg' %} width="200">
+                           
+                       </div>
+                    
+    
+    
+                        <h5>CORTADORA PREMIUM</h5>
+                        <div class="mt-3 info"> <span class="text1 d-block">Garnier Pure Active Miceller</span> <span class="text1">cleansing water. 125 ml </span> </div>
+                        <div class=" watchcost mt-3 text-dark"> <span>$500.000</span>
+                            <div class=" star mt-3 align-items-center"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                        </div>
+                    </div>
+                    <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mt-3">
+                    <div class="product-1 align-items-center p-2 text-center"> 
+    
+    
+    
+    
+                       <div class="image-container">
+    
+                         <img class="xyz rounded" src={% static 'core/imagenes/macetero1.jpg' %} width="200">
+    
+                        <img class="xyz-replacement rounded" src={% static 'core/imagenes/macetero1.jpg' %} width="200">
+                           
+                       </div>
+    
+    
+    
+    
+                        <h5>MACETEROS TOP GRIS</h5>
+                        <div class="mt-3 info"> <span class="text1 d-block">Garnier Pure Active Miceller</span> <span class="text1">cleansing water. 125 ml </span> </div>
+                        <div class=" tshirtcost mt-3 text-dark"> <span>$60.000</span>
+>>>>>>> f1f9269a696a6a7bab74a60ee185070c0f73ca75
                             <div class=" star mt-3 align-items-center"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
                         </div>
                     </div>
@@ -117,6 +273,7 @@
     
 
 <!--   Footer -->
+<<<<<<< HEAD
 <div>
     <div class="container-fluid mt-5">
       <link rel="stylesheet" href="{% static 'core/estilos/footer.css'%}">  
@@ -142,6 +299,86 @@
              </div>
         </div>
         
+=======
+<div class="container-fluid mt-5">
+  <link rel="stylesheet" href="{% static 'core/estilos/footer.css'%}">  
+<div class="card mx-5">
+<div class="row mb-4 ">
+    
+    <div class="col-md-4 col-sm-11 col-xs-11">
+        <div class="footer-text pull-left">
+             <div class="d-flex">
+                 <h1 class="font-weight-bold mr-2 px-3" style="color:#16151a; background-color:#957bda" > J </h1>
+                 <h1 style="color: #957bda">Ardineria</h1>
+             </div>
+             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi non pariatur numquam animi nam at impedit odit nisi.</p>
+             <div class="me-5 d-none d-lg-block">
+                <span style="text-align: left;">Tambien puedes contactarnos en Nuestras redes sociales</span>
+                <p>
+                  <a href="https://es-es.facebook.com/">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="facebook" height="15" width="15"></a>
+                  <a href="https://www.instagram.com/"><img src="https://w7.pngwing.com/pngs/16/46/png-transparent-made-in-kings-heath-instagram-facebook-female-graphy-instagram-logo-instagram-icon-text-trademark-magenta.png" alt="instagram" height="15px" width="15px" style="border-radius: 100%;"></a>
+                  <a href="https://twitter.com/"><img src="https://w7.pngwing.com/pngs/529/867/png-transparent-computer-icons-logo-twitter-miscellaneous-blue-logo-thumbnail.png" alt="twitter" height="15" width="15" style="border-radius: 100%;"></a>
+                </p>
+              </div>
+         </div>
+    </div>
+    
+    
+    <div class="col-md-2 col-sm-1 col-xs-1 mb-2"></div>
+    
+    <div class="col-md-2 col-sm-4 col-xs-4">
+ 
+        <h5 class="heading">Productos</h5>
+        <ul >
+            <li><a href="{% url 'venta'%}">Nuestros productos</a></li>
+            <li><a href="{% url 'seguimiento%}">Seguimiento en linea</a></li>
+            <li><a href="">Donaciones</a></li>
+            <li></li>
+        </ul>
+ 
+    </div>
+ 
+ 
+    <div class="col-md-2 col-sm-4 col-xs-4">
+ 
+        <h5 class="heading">Nosotros</h5>
+        <ul class="card-text">
+            <li><a href="{% url 'inicio' %}">Inicio</a></li>
+            <li><a href="{% url 'nosotros'%}">Nosotros</a></li>
+            <li><a href="{% url 'formulario'%}">Contacto</a></li>
+            
+        </ul>
+ 
+    </div>
+
+    <div class="col-md-2 col-sm-4 col-xs-4">
+ 
+        <h5 class="heading">Contacto</h5>
+        <p><i><img src="{% static 'core/iconos/geo-alt-fill.svg'%}" alt=""></i> Concha y Toro 1022,Puente Alto,Chile</p>
+        <p>
+            <i><img src="{% static 'core/iconos/envelope-fill.svg'%}" alt=""></i>
+            info@example.com
+          </p>
+          <p><i><img src="{% static 'core/iconos/phone-fill.svg'%}" alt="telefono"></i> + 56 52 623 623</p>
+          <p><i><img src="{% static 'core/iconos/telephone-fill.svg'%}" alt=""></i> + 56 22 536 523</p>    
+ 
+    </div>
+</div>
+
+
+<div class="divider mb-4" >   
+</div>
+
+
+<div class="row" style="font-size:10px;">
+
+<div class="col-md-6 col-sm-6 col-xs-6">
+    
+    <div class="pull-left">
+        
+        <p><i class="fa fa-copyright"></i> © 2022 <a href="{% url 'inicio'%}">Jardineria.com</a></p>
+>>>>>>> f1f9269a696a6a7bab74a60ee185070c0f73ca75
         
         <div class="col-md-2 col-sm-1 col-xs-1 mb-2"></div>
         
