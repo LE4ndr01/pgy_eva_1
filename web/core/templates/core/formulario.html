@@ -7,6 +7,7 @@
     <script src="formulario.js"></script>
 </head>
 <body>
+  {% load crispy_forms_tags %}
     <form action="" method="POST" id="form">
       <div class="form">
         <center><h1>Inicio sesión</h1></center>
@@ -22,7 +23,13 @@
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Recordar</label>
           </div>
+
+          {% csrf_token %}
+          {% crispy %}
           <button type="submit">  Iniciar</button>
+          
+         
+
           <p class="warnings" id="warnings"></p>
           <center><a style="color: rgb(0, 0, 0) ; text-decoration:none" href="ccuenta.html" onmouseover="this.style.color='gray'" onmouseout="this.style.color='black'">Crear cuenta
             <center><a style="color: rgb(0, 0, 0) ; text-decoration:none" href="index.html" onmouseover="this.style.color='gray'" onmouseout="this.style.color='black'">Volver a inicio

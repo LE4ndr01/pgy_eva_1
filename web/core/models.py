@@ -1,26 +1,31 @@
 
+from distutils.command.upload import upload
 from django.db import models
 
 # Create your models here.
 
 #MODELO PARA CATEGORIAS
 
-class Categoria(models.Model):
-    idcategoria = models.AutoField(primary_key=True,verbose_name="Id Categoria")
-    nombreCategoria = models.CharField(max_length=50,verbose_name="Nombre Categoria")
+class tipo(models.Model):
+    
+    nombreTipo = models.CharField(max_length=50,verbose_name="Nombre Tipo")
         
     def __str__(self):
-        return self.nombreCategoria
+        return self.nombreTipo
         
-#MODELO PARA USUARIOS
+#MODELO PARA PRODUCTO
 
-class Usuario(models.Model):
-    idusuario = models.AutoField(primary_key=True,verbose_name="Id Usuario")
-    nombreusuario = models.CharField(max_length=100,verbose_name="Nombre Usuario")
-    correousuario = models.CharField(max_length=200,verbose_name="Correo Usuario")
-    contrasenausuario = models.CharField(max_length=50,verbose_name="Contraseña Usuario")
-    Categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
-    
+class Producto(models.Model):
+    nombre = models.CharField(max_length=50)
+    precio = models.IntegerField()
+    descripcion= models.TextField()
+    segundadescripcion=models.TextField()
+    nuevo = models.BooleanField()
+    tipo = models.ForeignKey(tipo, on_delete=models.PROTECT)
+    fecha_fabricacion = models.DateField()
+    imagen = models.ImageField(upload_to="producto", null=True)
     def __str__(self):
-        return self.nombreusuario
+        return self.nombre
     
+#MODELO PARA CONTACTO
+
