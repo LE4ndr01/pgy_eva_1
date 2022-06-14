@@ -19,7 +19,7 @@ class Producto(models.Model):
     nombre = models.CharField(max_length=50)
     precio = models.IntegerField()
     descripcion= models.TextField()
-    segundadescripcion=models.TextField()
+    seg_desc=models.TextField()
     nuevo = models.BooleanField()
     tipo = models.ForeignKey(tipo, on_delete=models.PROTECT)
     fecha_fabricacion = models.DateField()
