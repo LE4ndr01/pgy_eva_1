@@ -50,7 +50,7 @@
     
     {% load static %}
 <nav class="navbar sticky-top navbar-light navbar-expand-lg"> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span class="navbar-toggler-icon"></span> </button>
-    <link rel="stylesheet" href={% static 'core/estilos/estilo.css' %}>
+    <link rel="stylesheet" href="{% static 'core/estilos/estilo.css'%}">
     <a href="https://le4ndr01.github.io/pgy_eva_1/index.html" title="Jardineria" class="logo"> 
         <img align="left" src="https://w7.pngwing.com/pngs/403/286/png-transparent-gardening-nursery-garden-design-arborist-gazon-leaf-logo-grass.png" height="4.5%" width="4.5%" style="border-radius: 100%;margin: 5px;"> </a>
       <div class="collapse navbar-collapse d-flex justify-content-end" id="collapsibleNavbar">
@@ -58,7 +58,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
-                    <img src={% static 'core/iconos/cart.svg' %} class="nav-link dropdown-toggle img-fluid" height="70px"
+                    <img src="{% static 'core/iconos/cart.svg' %}" class="nav-link dropdown-toggle img-fluid" height="70px"
                         width="70px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false"></img>
                     <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
@@ -87,26 +87,26 @@
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                   aria-expanded="false">Tienda</a>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" href="ventasproductos.html">Productos</a>
-                    <a class="dropdown-item" href="seguimiento.html">Seguimiento</a>
+                    <a class="dropdown-item" href="{% url 'venta'%}">Productos</a>
+                    <a class="dropdown-item" href="{% url 'seguimiento'%}">Seguimiento</a>
                     <a class="dropdown-item" href="#"></a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#"></a>
                   </div>
                   <a href="{% url 'inicio'%}" title="Jardineria" class="logo" style="height: 110px;"> 
                     
-            <li class="nav-item"><a class="nav-link" href="ForContacto.html">Contacto</a></li>
-            <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'contacto'%}">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'nosotros'%}">Nosotros</a></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                   aria-expanded="false">Mi cuenta</a>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" href="dashuser.html">Mi Cuenta</a>
-                    <a class="dropdown-item" href="formulario.html">Iniciar sesion</a>
-                    <a class="dropdown-item" href="index.html">Salir</a>
-                    <a class="dropdown-item" href="formulario.html"></a>
+                    <a class="dropdown-item" href="{% url 'dashuser'%}">Mi Cuenta</a>
+                    <a class="dropdown-item" href="{% url 'formulario'%}">Iniciar sesion</a>
+                    <a class="dropdown-item" href="i{% url 'inicio'%}">Salir</a>
+                    <a class="dropdown-item" href="{% url 'formulario'%}"></a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="ccuenta.html">Crear Cuenta</a>
+                    <a class="dropdown-item" href="{% url 'crear'%}">Crear Cuenta</a>
             
                   </div>   
             
@@ -134,7 +134,104 @@
             <div class="card mt-3">
                 <div class="product-1 align-items-center p-2 text-center"> 
 
+<<<<<<< HEAD
                    <div class="image-container">
+=======
+    {% load humanize %}
+<span>
+    <div class="container mb-5 mt-5">
+<<<<<<< HEAD
+        {% for p in productos %}
+=======
+        <link rel="stylesheet" href="{% static 'core/estilos/ventas.css'%}">
+>>>>>>> f1f9269a696a6a7bab74a60ee185070c0f73ca75
+        <div class="row">
+            
+            <div class="col-md-4">
+                <div class="card mt-3">
+                    <div class="product-1 align-items-center p-2 text-center"> 
+    
+                       <div class="image-container">
+                            {% if p.imagen %}
+                            <img class="xyz rounded" src="{{p.imagen.url}}" width="200">
+    
+<<<<<<< HEAD
+                            <img class="xyz-replacement rounded" src={{p.imagen.url}} width="200">
+                            {% endif %}
+                        </div>
+    
+                        
+                        <h5>{{p.nombre | title}}</h5>
+                        <div class="mt-1 info"> <span class="text1 d-block">{{ p.descripcion }}</span> <span class="text1">cleansing water. 125 ml </span> </div>
+                        <div class=" cost mt-3 text-dark"> <span>${{ p.precio}}</span>
+=======
+                         <img class="xyz rounded" src="{% static 'core/imagenes/flor1.jpg'%}" width="200">
+    
+                        <img class="xyz-replacement rounded" src="{% static 'core/imagenes/flor1.jpg'%}" width="200">
+                           
+                       </div>
+    
+                        
+                        <h5>FLOR DE PRIMAVERA</h5>
+                        <div class="mt-1 info"> <span class="text1 d-block">Garnier Pure Active Miceller</span> <span class="text1">cleansing water. 125 ml </span> </div>
+                        <div class=" cost mt-3 text-dark"> <span>$18.000</span>
+                            <div class=" star mt-3 align-items-center"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                        </div>
+                    </div>
+                    <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mt-3">
+                    <div class="product-1 align-items-center p-2 text-center"> 
+    
+                        <div class="image-container">
+    
+                         <img class="xyz rounded" src="{% static 'core/imagenes/cortadora2.jpg'%}" width="200">
+    
+                        <img class="xyz-replacement rounded" src="{% static 'core/imagenes/cortadora3.jpg'%}" width="200">
+                           
+                       </div>
+                    
+    
+    
+                        <h5>CORTADORA PREMIUM</h5>
+                        <div class="mt-3 info"> <span class="text1 d-block">Garnier Pure Active Miceller</span> <span class="text1">cleansing water. 125 ml </span> </div>
+                        <div class=" watchcost mt-3 text-dark"> <span>$500.000</span>
+                            <div class=" star mt-3 align-items-center"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                        </div>
+                    </div>
+                    <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mt-3">
+                    <div class="product-1 align-items-center p-2 text-center"> 
+    
+    
+    
+    
+                       <div class="image-container">
+    
+                         <img class="xyz rounded" src="{% static 'core/imagenes/macetero1.jpg' %}" width="200">
+    
+                        <img class="xyz-replacement rounded" src="{% static 'core/imagenes/macetero1.jpg' %}" width="200">
+                           
+                       </div>
+    
+    
+    
+    
+                        <h5>MACETEROS TOP GRIS</h5>
+                        <div class="mt-3 info"> <span class="text1 d-block">Garnier Pure Active Miceller</span> <span class="text1">cleansing water. 125 ml </span> </div>
+                        <div class=" tshirtcost mt-3 text-dark"> <span>$60.000</span>
+>>>>>>> f1f9269a696a6a7bab74a60ee185070c0f73ca75
+                            <div class=" star mt-3 align-items-center"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                        </div>
+                    </div>
+                    <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+                </div>
+>>>>>>> 866cb6a3c741f917fb272109698a86c027cf8d49
 
                      <img class="xyz rounded" src="{{p.imagen.url}}" width="200">
 
