@@ -7,7 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <link rel="stylesheet" href="estilos/compra.css">
+{% load static %}
+    <link rel="stylesheet" href= {% static 'core/estilos/compra.css'%} >
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
@@ -31,12 +32,12 @@
                 </div>
             </div>
         </div>
-    
+
         <div class="row d-flex justify-content-center border-top">
             <div class="col-5">
                 <div class="row d-flex">
                     <div class="book">
-                        <img src="imagenes/flor1.jpg" class="book-img">
+                        <img src= {% static 'core/imagenes/flor1.jpg'%} class="book-img">
                     </div>
                     <div class="my-auto flex-column d-flex pad-left">
                         <h6 class="mob-text">Thinking, Fast and Slow</h6>
@@ -64,12 +65,11 @@
                 </div>
             </div>
         </div>
-    
         <div class="row d-flex justify-content-center border-top">
             <div class="col-5">
                 <div class="row d-flex">
                     <div class="book">
-                        <img src="imagenes/carretilla1.jpg" class="book-img">
+                        <img src= {% static 'core/imagenes/carretilla1.jpg'%} class="book-img">
                     </div>
                     <div class="my-auto flex-column d-flex pad-left">
                         <h6 class="mob-text">Homo Deus: A Brief<br>History of Tomorrow</h6>
@@ -97,7 +97,7 @@
                 </div>
             </div>
         </div>
-    
+        
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="card">
