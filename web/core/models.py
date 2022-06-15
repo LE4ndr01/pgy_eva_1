@@ -22,7 +22,7 @@ class Producto(models.Model):
     seg_desc=models.TextField()
     nuevo = models.BooleanField()
     tipo = models.ForeignKey(tipo, on_delete=models.PROTECT)
-    fecha_fabricacion = models.DateField()
+    fecha_ingresado = models.DateField()
     imagen = models.ImageField(upload_to="producto", null=True)
     def __str__(self):
         return self.nombre

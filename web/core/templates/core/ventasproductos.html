@@ -98,7 +98,7 @@
                         {% endif %}
                         </div>
                         <h5>{{p.nombre | title}}</h5>
-                        <div class="mt-1 info"> <span class="text1 d-block">{{ p.descripcion }}</span> <span class="text1">cleansing water. 125 ml </span> </div>
+                        <div class="mt-1 info"> <span class="text1 d-block">{{ p.descripcion | title}}</span> <span class="text1">{{ p.seg_desc | title }} </span> </div>
                         <div class=" cost mt-3 text-dark"> <span>${{ p.precio}}</span>
                         <div class=" star mt-3 align-items-center"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
                         </div>
