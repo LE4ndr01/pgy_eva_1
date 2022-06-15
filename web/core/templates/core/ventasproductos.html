@@ -61,7 +61,7 @@
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                   aria-expanded="false">Mi cuenta</a>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'dashuser' %}">@{{user.username}}</a>
+                    <a class="dropdown-item" href="{% url 'dashuser' %}">@{{user.First_name}}</a>
                     <a class="dropdown-item" href="{% url 'logout' %}">Salir</a>
                     <div class="dropdown-divider"></div>
                     {% else %}
@@ -97,6 +97,7 @@
                             <img class="xyz-replacement rounded" src={{p.imagen.url}} width="200" height="200">
                         {% endif %}
                         </div>
+                        <br>
                         <h5>{{p.nombre | title}}</h5>
                         <div class="mt-1 info"> <span class="text1 d-block">{{ p.descripcion | title}}</span> <span class="text1">{{ p.seg_desc | title }} </span> </div>
                         <div class=" cost mt-3 text-dark"> <span>${{ p.precio}}</span>
