@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import inicio, nosotros, contacto,\
-                    venta, seguimiento, dashuser, ordenes, formulario, crear,registro
+                    venta, seguimiento, dashuser, ordenes, formulario, crear,registro,compra
 
 
 urlpatterns = [
@@ -14,4 +14,5 @@ urlpatterns = [
     path('formulario', formulario, name= "formulario"),
     path('crear', crear, name= "crear"),
     path('registro/', registro, name= "registro"),
+    path('compra', compra, name= "compra"),
 ]

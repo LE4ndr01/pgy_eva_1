@@ -47,4 +47,4 @@ class Contactos(models.Model):
     
     
     def __str__(self):
-        return self.nombre_c
+        return self.nombre

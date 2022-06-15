@@ -97,66 +97,54 @@
                 </div>
             </div>
         </div>
+        <div id="smart-button-container">
+            <div style="text-align: center;">
+              <div id="paypal-button-container"></div>
+            </div>
+          </div>
+        <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+        <script>
+          function initPayPalButton() {
+            paypal.Buttons({
+              style: {
+                shape: 'pill',
+                color: 'gold',
+                layout: 'vertical',
+                label: 'paypal',
+                
+              },
+      
+              createOrder: function(data, actions) {
+                return actions.order.create({
+                  purchase_units: [{"amount":{"currency_code":"USD","value":1}}]
+                });
+              },
+      
+              onApprove: function(data, actions) {
+                return actions.order.capture().then(function(orderData) {
+                  
+                  // Full available details
+                  console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+      
+                  // Show a success message within this page, e.g.
+                  const element = document.getElementById('paypal-button-container');
+                  element.innerHTML = '';
+                  element.innerHTML = '<h3>Thank you for your payment!</h3>';
+      
+                  // Or go to another URL:  actions.redirect('thank_you.html');
+                  
+                });
+              },
+      
+              onError: function(err) {
+                console.log(err);
+              }
+            }).render('#paypal-button-container');
+          }
+          initPayPalButton();
+        </script>
         
-        <div class="row justify-content-center">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="row">
-                        <div class="col-lg-3 radio-group">
-                            <div class="row d-flex px-3 radio">
-                                <img class="pay" src="https://i.imgur.com/WIAP9Ku.jpg">
-                                <p class="my-auto">Credit Card</p>
-                            </div>
-                            <div class="row d-flex px-3 radio gray">
-                                <img class="pay" src="https://i.imgur.com/OdxcctP.jpg">
-                                <p class="my-auto">Debit Card</p>
-                            </div>
-                            <div class="row d-flex px-3 radio gray mb-3">
-                                <img class="pay" src="https://i.imgur.com/cMk1MtK.jpg">
-                                <p class="my-auto">PayPal</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-5">
-                            <div class="row px-2">
-                                <div class="form-group col-md-6">
-                                    <label class="form-control-label">Name on Card</label>
-                                    <input type="text" id="cname" name="cname" placeholder="Johnny Doe">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label class="form-control-label">Card Number</label>
-                                    <input type="text" id="cnum" name="cnum" placeholder="1111 2222 3333 4444">
-                                </div>
-                            </div>
-                            <div class="row px-2">
-                                <div class="form-group col-md-6">
-                                    <label class="form-control-label">Expiration Date</label>
-                                    <input type="text" id="exp" name="exp" placeholder="MM/YYYY">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label class="form-control-label">CVV</label>
-                                    <input type="text" id="cvv" name="cvv" placeholder="***">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mt-2">
-                            <div class="row d-flex justify-content-between px-4">
-                                <p class="mb-1 text-left">Subtotal</p>
-                                <h6 class="mb-1 text-right">$23.49</h6>
-                            </div>
-                            <div class="row d-flex justify-content-between px-4">
-                                <p class="mb-1 text-left">Shipping</p>
-                                <h6 class="mb-1 text-right">$2.99</h6>
-                            </div>
-                            <div class="row d-flex justify-content-between px-4" id="tax">
-                                <p class="mb-1 text-left">Total (tax included)</p>
-                                <h6 class="mb-1 text-right">$26.48</h6>
-                            </div>
-                            <button class="btn-block btn-blue">
-                                <span>
-                                    <span id="checkout"><a href="{% url 'seguimiento'%}">checkout</a></span>
-                                    <span id="check-amt">$26.48</span>
-                                </span>
-                            </button>
+                            
                         </div>
                     </div>
                 </div>

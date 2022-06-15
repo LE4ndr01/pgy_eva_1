@@ -34,7 +34,7 @@ def venta (request):
     data ={
         'productos':Productos
     }
-    return render(request, 'core/ventasproductos.html', data)
+    return render(request, 'core/ventasproductos.html',data)
 def seguimiento (request):
     return render(request, 'core/seguimiento.html')
 def dashuser (request):
@@ -71,6 +71,9 @@ def registro (request):
         data["form"] = formulario
         
     return render(request, 'registration/registrar.html',data)
+
+def compra (request):
+    return render(request, 'core/compra.html')
 
 
 #Carrito de compras
