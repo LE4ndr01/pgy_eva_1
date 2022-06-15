@@ -29,48 +29,50 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <!-- navbar -->
-    
-  <nav class="navbar sticky-top navbar-light navbar-expand-lg"> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span class="navbar-toggler-icon"></span> </button>
-    <link rel="stylesheet" href="estilos/estilo.css">
-    <a href="https://le4ndr01.github.io/pgy_eva_1/index.html" title="Jardineria" class="logo"> 
+  {% load static %} 
+  <link rel="stylesheet" href={% static 'core/estilos/dashuser.css' %}>
+  <div>
+    <nav class="navbar sticky-top navbar-light navbar-expand-lg" style="text-align:center"> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span class="navbar-toggler-icon"></span> </button>
+      <link rel="stylesheet" href={% static 'core/estilos/estilo.css' %}>
+      <a href="{%url 'inicio'%}" title="Jardineria" class="logo"> 
         <img align="left" src="https://w7.pngwing.com/pngs/403/286/png-transparent-gardening-nursery-garden-design-arborist-gazon-leaf-logo-grass.png" height="4.5%" width="4.5%" style="border-radius: 100%;margin: 5px;"> </a>
       <div class="collapse navbar-collapse d-flex justify-content-end" id="collapsibleNavbar">
-    <div class="collapse navbar-collapse d-flex justify-content-end" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-            <li class="nav-item active"><a class="nav-link" href="index.html">Inicio</a></li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                  aria-expanded="false">Tienda</a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="ventasproductos.html">Productos</a>
-                    <a class="dropdown-item" href="seguimiento.html">Seguimiento</a>
-                    <a class="dropdown-item" href="#"></a>
+      <div class="collapse navbar-collapse d-flex justify-content-end" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+              <li class="nav-item active"><a class="nav-link" href="{% url 'inicio' %}">Inicio</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tienda</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="{% url 'venta' %}">Productos</a>
+                      <a class="dropdown-item" href="{% url 'seguimiento' %}">Seguimiento</a>
+                      <a class="dropdown-item" href="#"></a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#"></a>
-                  </div>
-                  <a href="https://le4ndr01.github.io/pgy_eva_1/index.html" title="Jardineria" class="logo" style="height: 110px;"> 
-                    
-            <li class="nav-item"><a class="nav-link" href="ForContacto.html">Contacto</a></li>
-            <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                  aria-expanded="false">Mi cuenta</a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="usuario.html">Mi Cuenta</a>
-                    <a class="dropdown-item" href="formulario.html">Iniciar sesion</a>
-                    <a class="dropdown-item" href="index.html">Salir</a>
-                    <a class="dropdown-item" href="formulario.html"></a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="ccuenta.html">Crear Cuenta</a>
-            
-                  </div>  
-            
-        </ul>
-        
-    </div>
-</nav>
-  
-  <!-- navbar -->
+                      <a class="dropdown-item" href="#"></a>
+                    </div>
+                    <a href="{% url 'inicio' %}" title="Jardineria" class="logo" style="height: 110px;"> 
+              <li class="nav-item"><a class="nav-link" href="{%url 'contacto'%}">Contacto</a></li>
+              <li class="nav-item"><a class="nav-link" href="{%url 'nosotros'%}">Nosotros</a></li>
+              <li class="nav-item dropdown">
+                {% if user.is_authenticated %}
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mi cuenta</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="{% url 'dashuser' %}">@{{user.username}}</a>
+                      <a class="dropdown-item" href="{% url 'logout' %}">Salir</a>
+                      <div class="dropdown-divider"></div>
+                {% else %}
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Iniciar Sesion</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="{% url 'login' %}" > Iniciar Sesion </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="{% url 'registro'%}" > Registro </a>
+                    </div>
+                    </div>  
+                {% endif %}
+          </ul>
+        </div>
+    </nav>
+  </div>
+    <!-- navbar -->
 
     <div class="container mt-4">
         <div class="row">
@@ -79,7 +81,7 @@
                     <div class="h4 text-white">Account</div>
                     <ul>
                         <li >
-                            <a href="dashuser.html" class="text-decoration-none d-flex align-items-start">
+                            <a href="{% url 'dashuser'%}" class="text-decoration-none d-flex align-items-start">
                                 <div class="fas fa-box pt-2 me-3"></div>
                                 <div class="d-flex flex-column">
                                     <div class="link">Mi cuenta</div>
@@ -88,7 +90,7 @@
                             </a>
                         </li>
                         <li class="active">
-                            <a href="ordenes.html" class="text-decoration-none d-flex align-items-start">
+                            <a href="{% url 'ordenes' %}" class="text-decoration-none d-flex align-items-start">
                                 <div class="fas fa-box-open pt-2 me-3"></div>
                                 <div class="d-flex flex-column">
                                     <div class="link">Mis Pedidos</div>
@@ -104,8 +106,9 @@
             <div class="col-lg-9 my-lg-0 my-1">
                 <div id="main-content" class="bg-white border">
                     <div class="d-flex flex-column">
-                        <div class="h5">Hello Jhon,</div>
-                        <div>Logged in as: ejemplo@gmail.com</div>
+                        <div class="h5">Hola {{user.first_name}}, Bienvenid@</div>
+                        <div>Inicio Sesion con el email: {{user.email}}</div>
+                        <div>Ultima conexion: {{user.last_login}}</div>
                     </div>
 
                     </div>
@@ -121,7 +124,7 @@
                                     <div class="fs-8">Products #03</div>
                                     <div class="fs-8">22 August, 2020 | 12:05 PM</div>
                                     <div class="rating d-flex align-items-center pt-1">
-                                        <img src="https://www.freepnglogos.com/uploads/like-png/like-png-hand-thumb-sign-vector-graphic-pixabay-39.png"
+                                        <img src="{% static 'core/imagenes/like.png'%}"
                                             alt=""><span class="px-2">Rating:</span>
                                         <span class="fas fa-star"></span>
                                         <span class="fas fa-star"></span>
@@ -134,7 +137,7 @@
                             <div class="col-lg-8">
                                 <div class="d-sm-flex align-items-sm-start justify-content-sm-between">
                                     <div class="status">Status : Delivered</div>
-                                    <div class="btn btn-primary text-uppercase"><a href="seguimiento.html">order info</a></div>
+                                    <div class="btn btn-primary text-uppercase"><a href="{% url 'seguimiento'%}">order info</a></div>
                                 </div>
                                 <div class="progressbar-track">
                                     <ul class="progressbar">
@@ -183,7 +186,7 @@
                             <div class="col-lg-8">
                                 <div class="d-sm-flex align-items-sm-start justify-content-sm-between">
                                     <div class="status">Status : Delivered</div>
-                                    <div class="btn btn-primary text-uppercase"> <a href="seguimiento.html">order info</a> </div>
+                                    <div class="btn btn-primary text-uppercase"> <a href="{% url 'seguimiento'%}">order info</a> </div>
                                 </div>
                                 <div class="progressbar-track">
                                     <ul class="progressbar">
@@ -216,8 +219,8 @@
 </body>
 <!--   Footer -->
 <div class="container-fluid mt-5">
-    <link rel="stylesheet" href="estilos/footer.css">  
-<div class="card mx-5">
+    <link rel="stylesheet" href="{% static 'core/estilos/footer.css' %}">  
+  <div class="card mx-5">
   <div class="row mb-4 ">
       
       <div class="col-md-4 col-sm-11 col-xs-11">
@@ -246,8 +249,8 @@
    
           <h5 class="heading">Productos</h5>
           <ul >
-              <li><a href="ventasproductos.html">Nuestros productos</a></li>
-              <li><a href="seguimiento.html">Seguimiento en linea</a></li>
+              <li><a href="{% url 'venta' %}">Nuestros productos</a></li>
+              <li><a href="{% url 'seguimiento' %}">Seguimiento en linea</a></li>
               <li><a href="">Donaciones</a></li>
               <li></li>
           </ul>
@@ -259,24 +262,24 @@
    
           <h5 class="heading">Nosotros</h5>
           <ul class="card-text">
-              <li><a href="index.html">Inicio</a></li>
-              <li><a href="nosotros.html">Nosotros</a></li>
-              <li><a href="formulario.css">Contacto</a></li>
+              <li><a href="{% url 'inicio' %}">Inicio</a></li>
+              <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
+              <li><a href="{% url 'contacto' %}">Contacto</a></li>
               
           </ul>
    
       </div>
-
+  
       <div class="col-md-2 col-sm-4 col-xs-4">
    
           <h5 class="heading">Contacto</h5>
-          <p><i><img src="iconos/geo-alt-fill.svg" alt=""></i> Concha y Toro 1022,Puente Alto,Chile</p>
+          <p><i><img src="{% static 'core/iconos/geo-alt-fill.svg' %}" alt=""></i> Concha y Toro 1022,Puente Alto,Chile</p>
           <p>
-              <i><img src="iconos/envelope-fill.svg" alt=""></i>
+              <i><img src="{% static 'core/iconos/envelope-fill.svg' %}" alt=""></i>
               info@example.com
             </p>
-            <p><i><img src="iconos/phone-fill.svg" alt="telefono"></i> + 56 52 623 623</p>
-            <p><i><img src="iconos/telephone-fill.svg" alt=""></i> + 56 22 536 523</p>    
+            <p><i><img src="{% static 'core/iconos/phone-fill.svg' %}" alt="telefono"></i> + 56 52 623 623</p>
+            <p><i><img src="{% static 'core/iconos/telephone-fill.svg' %}" alt=""></i> + 56 22 536 523</p>    
    
       </div>
   </div>
@@ -284,8 +287,8 @@
   
   <div class="divider mb-4" >   
   </div>
-
- 
+  
+  
   <div class="row" style="font-size:10px;">
   
   <div class="col-md-6 col-sm-6 col-xs-6">
@@ -299,13 +302,13 @@
   </div>
   
   
-
-
+  
+  
    
    
    
-</div>
-</div>
-
-</div>
+  </div>
+  </div>
+  
+  </div>
 </html>

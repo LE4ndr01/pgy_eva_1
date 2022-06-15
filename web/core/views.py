@@ -5,6 +5,7 @@ from .forms import CustomUserCreationForm
 from django.contrib.auth import login, authenticate
 
 
+
 # Create your views here.
 def inicio (request):
     return render(request, 'core/index.html')
@@ -54,3 +55,6 @@ def registro (request):
         data["form"] = formulario
         
     return render(request, 'registration/registrar.html',data)
+
+
+
