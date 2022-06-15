@@ -1,8 +1,6 @@
 <html>
   <head>
     
-
-    
   <title> Nosotros </title>
   <style type="text/css">
   
@@ -10,6 +8,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="viewport" content="width=device-width, target-densitydpi=device-dpi, initial-scale=0, maximum-scale=1, user-scalable=yes"> 
+  
+  <title>Add Map</title>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="./index.js"></script>
+
   </head>
   
   <body >
@@ -76,6 +83,11 @@ Cras lectus iaculis dictum natoque lacinia hendrerit auctor aenean elementum qui
 </p>
 <!-- fin texto -->
 </body>
+
+<h3>My Google Maps Demo</h3>
+<!--The div element for the map -->
+<div id="map"></div>
+
 <!--   Footer -->
 <div class="container-fluid mt-5">
   <link rel="stylesheet" href="{% static 'core/estilos/footer.css' %}">  
