@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width", initial-scale="1.0">
-    <link rel="stylesheet" href="estilos/cc.css">
+    
 </head>
 <body>
   {% load static %}
+  {% csrf_token %}
+
+  <link rel="stylesheet" href="{%static 'core/estilos/cc.css'%}">
     <form action="" method="POST" id="form">
       <div class="form">
         <center><h1>Registro</h1></center>
-            <div class="grupo">
-            <input type="email" name="" id="name" required><span class="barra"></span>
-            <label for="">Correo</label>
-          </div>
+            
           <div class="grupo">
-            <input type="text" name="" id="name" required><span class="barra"></span>
+            <input type="text" name="usuario" id="name" required><span class="barra"></span>
             <label for="">Usuario</label>
           </div>
           <div class="grupo">
-            <input type="password" name="" id="name" required><span class="barra"></span>
+            <input type="password" name="password1" id="name" required><span class="barra"></span>
             <label for="">Contraseña</label>
           </div>
           <button type="submit">Crear</button>
-          <center><a style="color: rgb(0, 0, 0) ; text-decoration:none" href="{% url 'formulario'%}" onmouseover="this.style.color='gray'" onmouseout="this.style.color='black'">Iniciar sesión
+          <center><a style="color: rgb(0, 0, 0) ; text-decoration:none" href="{% url 'login'%}" onmouseover="this.style.color='gray'" onmouseout="this.style.color='black'">Iniciar sesión
       </div>
     </form>
 </body>

@@ -27,21 +27,19 @@
         <div class="card" style="background-color:rosybrown;border-radius:37px;">
           <link href="{%static 'core/estilos/formulario.css'%}" rel=:"text/css">
           <div class="card-body">
-            <h2 ><p style="text-align:center;font-family:monaco;color:aliceblue">Ingresa Tus Credenciales</p></h2>
+            <h2 ><p style="text-align:center;font-family:monaco;color:aliceblue">Registro de Usuario</p></h2>
             <hr>
             <form action="" method="post"  >
 
                 {% csrf_token %}
                 {{form  | crispy}}
+                <a href="{% url 'inicio'%}"></a>
+                <a href="{% url 'login'%}"></a>
                 <br>
                 <br>
                 &nbsp;&nbsp;
                 
-                <button type"submit" value="ingresar" class="btn btn-success float-right" >ingresar</button>
-                &nbsp;
-                <button   class="btn btn-success float-left" ><a href="{%url 'inicio'%}" style="color:white" >Inicio</a></button>
-                &nbsp;
-                <button   class="btn btn-success float-left" ><a href="{%url 'registro'%}" style="color:white" >Crear Cuenta</a></button>
+                <button type"submit" value="ingresar" class="btn btn-success float-right" >Registrar</button>
             </form>
           </div>
 
