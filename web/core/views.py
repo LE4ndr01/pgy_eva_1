@@ -1,8 +1,11 @@
-from pyexpat.errors import messages
+
 from django.shortcuts import redirect, render
 from .models import Producto
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm,ContactForm
 from django.contrib.auth import login, authenticate
+
+
+
 
 
 
@@ -12,7 +15,20 @@ def inicio (request):
 def nosotros (request):
     return render(request, 'core/nosotros.html')
 def contacto (request):
-    return render(request, 'core/forcontacto.html')
+    
+    data={
+        'form':ContactForm()
+    }
+    
+    if request.method == 'POST': 
+        formulario = ContactForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "Mensaje enviado"
+        else:
+            data["form"] = formulario
+    
+    return render(request, 'core/forcontacto.html',data)
 def venta (request):
     Productos = Producto.objects.all()
     data ={
@@ -57,4 +73,5 @@ def registro (request):
     return render(request, 'registration/registrar.html',data)
 
 
+#Carrito de compras
 
