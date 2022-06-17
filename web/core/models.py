@@ -39,11 +39,12 @@ opcion_consulta = [
 ]
 
 class Contactos(models.Model):
-    nombre_c = models.CharField(max_length=50)
+    nombre = models.CharField(max_length=50)
     email = models.EmailField()
     tipo_consulta = models.IntegerField(choices=opcion_consulta)
-    mensaje = models.TextField()
+    mensajes= models.TextField(max_length=500)
     aviso = models.BooleanField()
+    fecha_enviado= models.DateTimeField(auto_now_add=True)
     
     
     def __str__(self):
