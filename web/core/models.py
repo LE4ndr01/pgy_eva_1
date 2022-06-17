@@ -32,7 +32,7 @@ opcion_consulta = [
     [0,"Consulta"],
     [1,"Sugerencia"],
     [2,"Reclamo"],
-    [3,"No deseo Redponder"],
+    [3,"No deseo Responder"],
     [4,"otro"],
     
     
