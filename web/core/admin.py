@@ -5,7 +5,7 @@ from .models import tipo,Producto,Contactos
 # Administrar modelo
 
 class ProductoAdmin(admin.ModelAdmin):
-    list_display = ["nombre","precio","nuevo","tipo"]
+    list_display = ["nombre","precio","nuevo","tipo","fecha"]
     list_editable = ["precio"]
     search_fields =["nombre"]
     list_filter = ["tipo","nuevo"]

@@ -22,7 +22,7 @@ class Producto(models.Model):
     tipo = models.ForeignKey(tipo, on_delete=models.PROTECT)
     fecha_ingresado = models.DateField()
     imagen = models.ImageField(upload_to="producto", null=True)
-    fecha = models.DateField(auto_now_add=True)
+    fecha = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.nombre
     
@@ -32,8 +32,8 @@ opcion_consulta = [
     [0,"Consulta"],
     [1,"Sugerencia"],
     [2,"Reclamo"],
-    [3,"otro"],
-    [4,"No deseo responder"]
+    [3,"No deseo Redponder"],
+    [4,"otro"],
     
     
 ]
@@ -43,7 +43,7 @@ class Contactos(models.Model):
     email = models.EmailField()
     tipo_consulta = models.IntegerField(choices=opcion_consulta)
     mensajes= models.TextField(max_length=500)
-    aviso = models.BooleanField()
+    aviso = models.BooleanField(verbose_name="Acepto Terminos y Condiciones")
     fecha_enviado= models.DateTimeField(auto_now_add=True)
     
     

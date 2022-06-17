@@ -23,7 +23,7 @@
     
     <title>Contacto</title>
     <style type="text/css">
-      #form-1, #form-2{
+      #form-1{
         display: inline-block;
         }
         #form-1{
@@ -33,21 +33,47 @@
           text-align: justify;
           display: inline-block;
           width: 200px;
-          margin-rigth: 10px;
+          margin-rigth: 100px;
           margin-left: 10px;
           }
           select{
-            width: 120%;
+            width: 100%;
+            border-color: #00bfff
           }
           input{
-            width: 120%;
+            text-align: justify;
+            width: 100%;
+            border-radius: 5px;
+            border-color: #00bfff;
           }
-          textarea{
-            overflow: scroll;
-            width: 120%;
-            rezise: none;
+            textarea{
+              overflow: scroll;
+              width: 100%;
+              rezise: none;
+              padding: 500;
           }
-          
+          label{
+            
+            color: #00bfff;
+          }
+        
+        #Card{
+          text-align: justify;
+          width: 100%;
+          height: 100%;
+          background-color: aliceblue;
+          border-radius: 35px;
+          border-color: #00bfff;
+        }
+        p{
+          text-align:center;
+          font-family:monaco;color:black
+        }
+        checkbox{
+          text-align: center;
+          margin-left: 50px;
+        }
+       
     </style>
     </head>
     
@@ -105,13 +131,13 @@
 <br>
 <br>
   <div class="row">
-    <div class="col-10 col-md-4 offset-md-1">
-      <div class="card" style="background-color:#F2EFEF;border-radius:30px;text-align:center">
-        <div class="card-body">
-          <fieldset>
-          <h2 ><p style="text-align:center;font-family:monaco;color:black"> Contactanos </p></h2>
+    <div class="col-10 col-md-8 offset-md-4">
+      <div class="card" id="Card" >
+        
+         
+          <h2 ><p> Contactanos </p></h2>
           <hr>
-          <form action="# " method="post" style="rezise:none;" >
+         
               {% csrf_token %}
               {{form  | crispy}}
           <br>
@@ -119,9 +145,9 @@
           &nbsp;&nbsp;
           <button type"submit" value="ingresar" class="btn btn-success float-center" >Enviar</button>
           </form>
-          </fieldset>
+          
+        
         </div>
-      </div>
     </div>
   </div>
 </div>
@@ -196,7 +222,7 @@
  
     </div>
 </div>
- 
+
 
 <div class="divider mb-4" >   
 </div>
