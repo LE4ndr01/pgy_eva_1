@@ -1,6 +1,6 @@
 /* your CSS goes here*/
 body {
-  height: 1200px;
+  height: 120px;
   background-color: #000000;
 }
 
@@ -11,7 +11,7 @@ nav {
 
 .nav-link {
   font-size: 1.2em;
-  color: #ffffff !important;
+  color: #020202 !important;
   font-weight: 500;
   text-align: center;
 }
