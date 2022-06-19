@@ -1,7 +1,7 @@
 
 from django.shortcuts import redirect, render
 from .models import Producto
-from .forms import CustomUserCreationForm,ContactForm
+from .forms import CustomUserCreationForm,ContactForm,productoform
 from django.contrib.auth import login, authenticate
 
 
@@ -75,6 +75,53 @@ def registro (request):
 def compra (request):
     return render(request, 'core/compra.html')
 
+# CRUD
+
+
+# metodo Agregar
+
+def agregar_producto(request):
+    
+    data ={
+       
+       'form':productoform()
+        
+    }
+    if request.method == 'POST':
+        formulario = productoform(data=request.POST,files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "Producto agregado"
+        else:
+            data["form"] = formulario   
+        
+
+    return render (request, 'crud/agregar.html',data)
+
+# metodo Eliminar
+
+def eliminar_producto(request):
+
+    return render (request, 'crud/eliminar.html')
+
+# metodo Actualizar
+
+def actualizar_producto(request):
+
+    return render (request, 'crud/actualizar.html')
+
+# metodo listar
+
+def listar_producto(request):
+    Productos = Producto.objects.all()
+    data={
+        'productos':Productos
+    }
+    
+
+    return render (request, 'crud/listar.html',data)
+    
+#------------------------------------------------
 
 #Carrito de compras
 

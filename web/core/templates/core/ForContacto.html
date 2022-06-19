@@ -21,60 +21,59 @@
 
     
     
-    <title>Contacto</title>
-    <style type="text/css">
-      #form-1{
-        display: inline-block;
-        }
-        #form-1{
-          margin-right: 15px;
-        }
-        form{
-          text-align: justify;
-          display: inline-block;
-          width: 200px;
-          margin-rigth: 100px;
-          margin-left: 10px;
-          }
-          select{
-            width: 100%;
-            border-color: #00bfff
-          }
-          input{
-            text-align: justify;
-            width: 100%;
-            border-radius: 5px;
-            border-color: #00bfff;
-          }
-            textarea{
-              overflow: scroll;
-              width: 100%;
-              rezise: none;
-              padding: 500;
-          }
-          label{
-            
-            color: #00bfff;
-          }
-        
-        #Card{
-          text-align: justify;
-          width: 100%;
-          height: 100%;
-          background-color: aliceblue;
-          border-radius: 35px;
-          border-color: #00bfff;
-        }
-        p{
-          text-align:center;
-          font-family:monaco;color:black
-        }
-        checkbox{
-          text-align: center;
-          margin-left: 50px;
-        }
+<title>Contacto</title>
+<style type="text/css">
+form {
+    width: 35%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: #f2f2f2;
+    border-radius: 5px;
+}
+select{
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+checkbox{
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+textarea{
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+      
+
+
        
-    </style>
+</style>
     </head>
     
     <body style="background-color:#7B9F6E;">
@@ -127,37 +126,33 @@
 
      <!--formulario de contacto-->
     
-<div id="form-1" class="container mb-5 mt-5" >
+
 <br>
 <br>
-  <div class="row">
-    <div class="col-10 col-md-8 offset-md-4">
-      <div class="card" id="Card" >
-        
+  
+        <form action="" class="formulario_contacto" method="post" >
          
-          <h2 ><p> Contactanos </p></h2>
-          <hr>
+          <h2 ><p id="contacto"> Contactanos </p></h2>
+          
          
               {% csrf_token %}
               {{form  | crispy}}
           <br>
           <br>
-          &nbsp;&nbsp;
+         
           <button type"submit" value="ingresar" class="btn btn-success float-center" >Enviar</button>
-          </form>
-          
+         &nbsp;&nbsp;{{mensaje|title}}
+        </form>
         
-        </div>
-    </div>
-  </div>
-</div>
 
+        
+    
 
 
 
     </body>
-<!--   Footer -->
-<div class="container-fluid mt-5">
+ <!--   Footer -->
+ <div class="container-fluid mt-5">
   <link rel="stylesheet" href="{% static 'core/estilos/footer.css' %}">  
 <div class="card mx-5">
 <div class="row mb-4 ">
