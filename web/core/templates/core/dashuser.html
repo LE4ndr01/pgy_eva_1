@@ -29,31 +29,30 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <!-- navbar -->
-  {% load static %}
-   <link rel="stylesheet" href="{% static 'core/estilos/dashuser.css'%}">
-   <link rel="stylesheet" href="{% static 'core/estilos/estilo.css'%}">
+  {% load static %} 
   <div>
     <nav class="navbar sticky-top navbar-light navbar-expand-lg" style="text-align:center"> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span class="navbar-toggler-icon"></span> </button>
-        
+      <link rel="stylesheet" href={% static 'core/estilos/estilo.css'%}>
       <a href="{%url 'inicio'%}" title="Jardineria" class="logo"> 
         <img align="left" src="https://w7.pngwing.com/pngs/403/286/png-transparent-gardening-nursery-garden-design-arborist-gazon-leaf-logo-grass.png" height="4.5%" width="4.5%" style="border-radius: 100%;margin: 5px;"> </a>
       <div class="collapse navbar-collapse d-flex justify-content-end" id="collapsibleNavbar">
       <div class="collapse navbar-collapse d-flex justify-content-end" id="collapsibleNavbar">
           <ul class="navbar-nav">
+            
               <li class="nav-item active"><a class="nav-link" href="{% url 'inicio' %}">Inicio</a></li>
               {% if user.is_staff %}
+              
               <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Agregar</a>
               <div class="dropdown-menu">
+                      <a class="dropdown-item" href="{% url 'listar' %}">Lista de  Productos</a>
+                      <a class="dropdown-item" href="#"></a>
                       <a class="dropdown-item" href="{% url 'agregar' %}">Agregar Productos</a>
-                      <a class="dropdown-item" href="{% url 'listar' %}">Listar Productos</a>
-                      <a class="dropdown-item" href="{% url 'Modificar' %}"></a>
-                      <a class="dropdown-item" href="{% url 'eliminar' %}"></a>
-                    <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#"></a>
                     </div>
                   </li>
             {% endif %}
+          
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tienda</a>
                     <div class="dropdown-menu">
@@ -63,10 +62,13 @@
                     <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#"></a>
                     </div>
+                    
                     <a href="https://le4ndr01.github.io/pgy_eva_1/index.html" title="Jardineria" class="logo" style="height: 110px;"> 
+                      
               <li class="nav-item"><a class="nav-link" href="{%url 'contacto'%}">Contacto</a></li>
               <li class="nav-item"><a class="nav-link" href="{%url 'nosotros'%}">Nosotros</a></li>
               <li class="nav-item dropdown">
+                
                 {% if user.is_authenticated %}
                   <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mi cuenta</a>
                     <div class="dropdown-menu">
@@ -82,6 +84,7 @@
                     </div>
                     </div>  
                 {% endif %}
+  
           </ul>
         </div>
     </nav>
