@@ -8,9 +8,6 @@ from django.http import Http404
 
 
 
-
-
-
 # Create your views here.
 def inicio (request):
     return render(request, 'core/index.html')
