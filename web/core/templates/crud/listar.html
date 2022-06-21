@@ -81,7 +81,7 @@
   </nav>
 </div>
   <!-- navbar -->
-<form>
+<form method="post">
     <table class="table table-striped table-hover table-responsive-sm" >
         <tr>
             <th>Nombre</th>
@@ -90,6 +90,7 @@
             <th>Tipo</th>
             <th>Fecha ingresado</th>
             <th>Es nuevo?</th>
+            <th>Opciones</th>
 
         </tr>
     
@@ -109,9 +110,18 @@
                     No
                 {% endif %}
             </td>
+            <td>
+              <a name="" id="" class="btn btn-info btn-sm " href="{% url 'Modificar' p.id %}" role="button">Modificar</a>
+              <a name="" id="" class="btn btn-danger btn-sm " href="{% url 'eliminar' p.id %}" role="button">Eliminar</a>   
+            </td>
         </tr>
+        
     {% endfor %}
     </table>
+    <div>
+      {% include 'crud/paginator.html' %}
+    </div>
+
 </form>
  <!--   Footer -->
  <div class="container-fluid mt-5">

@@ -119,9 +119,9 @@ textarea{
 <!-- navbar -->
 
 <!-- Formulario -->
-<form action="" class="formulario_contacto" method="post" >
+<form action="" class="formulario_contacto" method="post" enctype="multipart/form-data">
          
-  <h2 ><p id="contacto"> Contactanos </p></h2>
+  <h2 ><p id="contacto"> Agregar </p></h2>
   
  
       {% csrf_token %}
@@ -129,7 +129,7 @@ textarea{
   <br>
   <br>
  
-  <button type"submit" value="ingresar" class="btn btn-success float-center" >Enviar</button>
+  <button type"submit" value="ingresar" class="btn btn-success float-center" >Guardar</button>
  &nbsp;&nbsp;{{mensaje|title}}
 </form>
    

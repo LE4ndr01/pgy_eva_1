@@ -1,8 +1,10 @@
 
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render,get_object_or_404
 from .models import Producto
 from .forms import CustomUserCreationForm,ContactForm,productoform
 from django.contrib.auth import login, authenticate
+from django.core.paginator import Paginator
+from django.http import Http404
 
 
 
@@ -30,9 +32,9 @@ def contacto (request):
     
     return render(request, 'core/forcontacto.html',data)
 def venta (request):
-    Productos = Producto.objects.all()
+    productos = Producto.objects.all()
     data ={
-        'productos':Productos
+        'productos':productos
     }
     return render(request, 'core/ventasproductos.html',data)
 def seguimiento (request):
@@ -71,12 +73,10 @@ def registro (request):
         data["form"] = formulario
         
     return render(request, 'registration/registrar.html',data)
-
 def compra (request):
     return render(request, 'core/compra.html')
 
 # CRUD
-
 
 # metodo Agregar
 
@@ -100,22 +100,45 @@ def agregar_producto(request):
 
 # metodo Eliminar
 
-def eliminar_producto(request):
-
-    return render (request, 'crud/eliminar.html')
+def eliminar_producto(request,id):
+    producto = get_object_or_404(Producto, id=id)
+    producto.delete()
+    return redirect(to='listar')
 
 # metodo Actualizar
 
-def actualizar_producto(request):
+def actualizar_producto(request, id):
+    
+    producto = get_object_or_404(Producto, id=id)
+    
+    data ={
+       'form':productoform(instance=producto)
+    }
+    
+    if request.method == 'POST':
+        formulario = productoform(data=request.POST,instance=producto,files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect(to='listar')
+        data["form"] = formulario
 
-    return render (request, 'crud/actualizar.html')
+    return render (request, 'crud/actualizar.html',data)
 
 # metodo listar
 
 def listar_producto(request):
-    Productos = Producto.objects.all()
+    productos = Producto.objects.all()
+    page = request.GET.get('page', 1)
+    
+    try:
+        paginator = Paginator(productos, 5)
+        productos = paginator.page(page)
+    except:
+        raise Http404
+    
+    
     data={
-        'productos':Productos
+        'entity':productos
     }
     
 
