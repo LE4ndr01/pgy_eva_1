@@ -138,7 +138,8 @@ def listar_producto(request):
     
     
     data={
-        'entity':productos
+        'entity':productos,
+        'paginator':paginator
     }
     
 
