@@ -5,6 +5,7 @@ from .forms import CustomUserCreationForm,ContactForm,productoform,tipoform
 from django.contrib.auth import login, authenticate
 from django.core.paginator import Paginator
 from django.http import Http404
+from django.contrib.auth.decorators import login_required,permission_required
 
 
 
@@ -81,9 +82,8 @@ def compra (request):
     return render(request, 'core/compra.html')
 
 # CRUD PRODUCTO
-
 # metodo Agregar
-
+@permission_required('core.add_producto')
 def agregar_producto(request):
     
     data ={
@@ -96,22 +96,20 @@ def agregar_producto(request):
         if formulario.is_valid():
             formulario.save()
             data["mensaje"] = "Producto agregado"
-            return redirect(to='listar')
+            
         else:
             data["form"] = formulario   
         
 
     return render (request, 'crud/agregar.html',data)
-
 # metodo Eliminar
-
+@permission_required('core.delete_producto')
 def eliminar_producto(request,id):
     producto = get_object_or_404(Producto, id=id)
     producto.delete()
     return redirect(to='listar')
-
 # metodo Actualizar
-
+@permission_required('core.change_producto')
 def actualizar_producto(request, id):
     
     producto = get_object_or_404(Producto, id=id)
@@ -128,9 +126,8 @@ def actualizar_producto(request, id):
         data["form"] = formulario
 
     return render (request, 'crud/actualizar.html',data)
-
 # metodo listar
-
+@permission_required('core.view_producto')
 def listar_producto(request):
     productos = Producto.objects.all()
     page = request.GET.get('page', 1)
@@ -153,7 +150,7 @@ def listar_producto(request):
 #------------------------------------------------
 
 # CRUD CATEGORIA
-
+@permission_required('core.add_tipo')
 def agregar_tipo(request):
     
     data ={
@@ -172,12 +169,12 @@ def agregar_tipo(request):
         
 
     return render (request, 'crud_tipo/agregar.html', data)
-
+@permission_required('core.delete_tipo')
 def eliminar_tipo(request,id):
     tipos = get_object_or_404(tipo, id=id)
     tipos.delete()
     return redirect(to='listar_tipo')
-
+@permission_required('core.change_tipo')
 def actualizar_tipo(request, id):
     
     tipos = get_object_or_404(tipo, id=id)
@@ -194,7 +191,7 @@ def actualizar_tipo(request, id):
         data["form"] = formulario
 
     return render (request, 'crud_tipo/actualizar.html',data)
-
+@permission_required('core.view_tipo')
 def listar_tipo(request):
     tipos = tipo.objects.all()
     page = request.GET.get('page', 1)

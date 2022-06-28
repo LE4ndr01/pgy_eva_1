@@ -43,13 +43,21 @@
             <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Agregar</a>
             <div class="dropdown-menu">
+                    {% if perms.core.view_producto %}
                     <a class="dropdown-item" href="{% url 'listar' %}">Lista de  Productos</a>
+                    {% endif %}
                     <a class="dropdown-item" href="#"></a>
+                    {% if perms.core.add_producto %}
                     <a class="dropdown-item" href="{% url 'agregar' %}">Agregar Productos</a>
+                    {% endif %}
                     <div class="dropdown-divider"></div>
                     <div class="dropdown-divider"></div>
+                    {% if perms.core.view_tipo %}
                     <a class="dropdown-item" href="{% url 'listar_tipo' %}">Lista de Categorias</a>
+                    {% endif %}
+                    {% if perms.core.add_tipo %}
                     <a class="dropdown-item" href="{% url 'agregar_tipo' %}">Agregar Categorias</a>
+                    {% endif %}
                   </div>
                 </li>
           {% endif %}

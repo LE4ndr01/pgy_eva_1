@@ -78,6 +78,8 @@ textarea{
     
     <body style="background-color:#7B9F6E;">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+
+
 <!-- navbar -->
 {% load static %} 
 {% load crispy_forms_tags %}
@@ -90,16 +92,27 @@ textarea{
     <div class="collapse navbar-collapse d-flex justify-content-end" id="collapsibleNavbar">
         <ul class="navbar-nav">
           
-            <li class="nav-item"><a class="nav-link" href="{% url 'inicio' %}">Inicio</a></li>
+            <li class="nav-item active"><a class="nav-link" href="{% url 'inicio' %}">Inicio</a></li>
             {% if user.is_staff %}
             
             <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Agregar</a>
             <div class="dropdown-menu">
+                    {% if perms.core.view_producto %}
                     <a class="dropdown-item" href="{% url 'listar' %}">Lista de  Productos</a>
+                    {% endif %}
                     <a class="dropdown-item" href="#"></a>
+                    {% if perms.core.add_producto %}
                     <a class="dropdown-item" href="{% url 'agregar' %}">Agregar Productos</a>
-                    <a class="dropdown-item" href="#"></a>
+                    {% endif %}
+                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-divider"></div>
+                    {% if perms.core.view_tipo %}
+                    <a class="dropdown-item" href="{% url 'listar_tipo' %}">Lista de Categorias</a>
+                    {% endif %}
+                    {% if perms.core.add_tipo %}
+                    <a class="dropdown-item" href="{% url 'agregar_tipo' %}">Agregar Categorias</a>
+                    {% endif %}
                   </div>
                 </li>
           {% endif %}
@@ -116,7 +129,7 @@ textarea{
                   
                   <a href="https://le4ndr01.github.io/pgy_eva_1/index.html" title="Jardineria" class="logo" style="height: 110px;"> 
                     
-            <li class="nav-item active"><a class="nav-link active" href="{%url 'contacto'%}">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link" href="{%url 'contacto'%}">Contacto</a></li>
             <li class="nav-item"><a class="nav-link" href="{%url 'nosotros'%}">Nosotros</a></li>
             <li class="nav-item dropdown">
               
