@@ -7,6 +7,7 @@ from django.db import models
 class tipo(models.Model):
     
     nombreTipo = models.CharField(max_length=50,verbose_name="Nombre Tipo")
+    
         
     def __str__(self):
         return self.nombreTipo

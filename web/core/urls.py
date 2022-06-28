@@ -2,7 +2,8 @@ from django.urls import path
 from .views import inicio, nosotros, contacto,\
                     venta, seguimiento, dashuser, ordenes, formulario,\
                     crear,registro,compra,agregar_producto,eliminar_producto,\
-                    listar_producto,actualizar_producto,Paginator
+                    listar_producto,actualizar_producto,Paginator,agregar_tipo,\
+                    eliminar_tipo,actualizar_tipo,listar_tipo
 
 
 urlpatterns = [
@@ -22,4 +23,9 @@ urlpatterns = [
     path('listar_producto/', listar_producto, name= "listar"),
     path('Modificar_producto/<id>/', actualizar_producto, name= "Modificar"),
     path('page/', Paginator, name= "page"),
+    path('agregar-tipo/', agregar_tipo, name= "agregar_tipo"),
+    path('eliminar_tipo/<id>/', eliminar_tipo, name= "eliminar_tipo"),
+    path('listar_tipo/', listar_tipo, name= "listar_tipo"),
+    path('Modificar_tipo/<id>/', actualizar_tipo, name= "Modificar_tipo"),
+    
 ]

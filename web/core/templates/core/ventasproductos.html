@@ -99,7 +99,7 @@
 <div class="container mb-5 mt-5">
     
     <div class="row">
-        {% for p in productos %}
+        {% for p in entity %}
         <div class="col-md-4 ">
             <div class="card mt-3">
                 <div class="product-1 align-items-center p-2 text-center"> 
@@ -124,6 +124,7 @@
         </div>
         
     </div>
+    {% include 'crud/paginator.html' %}
 </div> 
 
 <script src="{% static 'js/jquery-3.4.1.min.js '%}"></script>
