@@ -127,10 +127,10 @@
             
             <td>
               {%if perms.core.change_tipo%}
-              <a name="" id="" class="btn btn-info btn-sm " href="{% url 'Modificar' p.id %}" role="button">Modificar</a>
+              <a name="" id="" class="btn btn-info btn-sm " href="{% url 'Modificar_tipo' p.id %}" role="button">Modificar</a>
               {%endif%}
               {%if perms.core.delete_tipo%}
-              <a name="" id="" class="btn btn-danger btn-sm " href="{% url 'eliminar' p.id %}" role="button">Eliminar</a> 
+              <a name="" id="" class="btn btn-danger btn-sm " href="{% url 'eliminar_tipo' p.id %}" role="button">Eliminar</a> 
               {%endif%}
             </td>
         </tr>
