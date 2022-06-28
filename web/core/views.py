@@ -96,6 +96,7 @@ def agregar_producto(request):
         if formulario.is_valid():
             formulario.save()
             data["mensaje"] = "Producto agregado"
+            return redirect(to='listar')
         else:
             data["form"] = formulario   
         
@@ -175,21 +176,21 @@ def agregar_tipo(request):
 def eliminar_tipo(request,id):
     tipos = get_object_or_404(tipo, id=id)
     tipos.delete()
-    return redirect(to='listar')
+    return redirect(to='listar_tipo')
 
 def actualizar_tipo(request, id):
     
     tipos = get_object_or_404(tipo, id=id)
     
     data ={
-       'form':productoform(instance=tipos)
+       'form':tipoform(instance=tipos)
     }
     
     if request.method == 'POST':
-        formulario = productoform(data=request.POST,instance=tipos,files=request.FILES)
+        formulario = tipoform(data=request.POST,instance=tipos,files=request.FILES)
         if formulario.is_valid():
             formulario.save()
-            return redirect(to='listar')
+            return redirect(to='listar_tipo')
         data["form"] = formulario
 
     return render (request, 'crud_tipo/actualizar.html',data)
