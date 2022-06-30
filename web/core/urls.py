@@ -1,10 +1,15 @@
-from django.urls import path
-
+from django.db import router
+from django.urls import path,include
+from rest_framework import routers
 from .views import inicio, nosotros, contacto,\
                     venta, seguimiento, dashuser, ordenes, formulario,\
                     crear,registro,compra,agregar_producto,eliminar_producto,\
                     listar_producto,actualizar_producto,Paginator,agregar_tipo,\
-                    eliminar_tipo,actualizar_tipo,listar_tipo
+                    eliminar_tipo,actualizar_tipo,listar_tipo,ProductoViewset
+
+
+router = routers.DefaultRouter()
+router.register('producto', ProductoViewset)
 
 
 urlpatterns = [
@@ -28,7 +33,5 @@ urlpatterns = [
     path('eliminar_tipo/<id>/', eliminar_tipo, name= "eliminar_tipo"),
     path('listar_tipo/', listar_tipo, name= "listar_tipo"),
     path('Modificar_tipo/<id>/', actualizar_tipo, name= "Modificar_tipo"),
-    
-    
-    
+    path('api/',include(router.urls)), 
 ]
