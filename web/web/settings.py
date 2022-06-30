@@ -41,11 +41,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'core',
     'colorfield',
     'django.contrib.humanize',
     'crispy_forms',
-    'rest_framework',
+
+    
    
 ]
 
@@ -80,6 +82,9 @@ TEMPLATES = [
         },
     },
 ]
+
+
+
 
 WSGI_APPLICATION = 'web.wsgi.application'
 

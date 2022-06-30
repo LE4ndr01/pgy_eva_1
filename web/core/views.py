@@ -44,8 +44,10 @@ def venta (request):
     return render(request, 'core/ventasproductos.html',data)
 def seguimiento (request):
     return render(request, 'core/seguimiento.html')
+
 def dashuser (request):
     return render(request, 'core/dashuser.html')
+
 def ordenes (request):
     return render(request, 'core/ordenes.html')
 def formulario (request):
@@ -78,6 +80,7 @@ def registro (request):
         data["form"] = formulario
         
     return render(request, 'registration/registrar.html',data)
+@login_required
 def compra (request):
     return render(request, 'core/compra.html')
 

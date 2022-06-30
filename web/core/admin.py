@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import tipo,Producto,Contactos
+from .forms import productoform
 
 # Register your models here.
 # Administrar modelo
@@ -10,6 +11,7 @@ class ProductoAdmin(admin.ModelAdmin):
     search_fields =["nombre"]
     list_filter = ["tipo","nuevo"]
     list_per_page = 10
+    form = productoform
     
 class ContactoAdmin(admin.ModelAdmin):
     list_display = ["nombre","email","tipo_consulta","aviso","mensajes","fecha_enviado"]
