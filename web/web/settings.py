@@ -28,11 +28,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_URL='two_factor:login'
 LOGIN_REDIRECT_URL='/'
 LOGOUT_REDIRECT_URL='/'
 
 SOCIAL_AUTH_FACEBOOK_KEY = "769267854257359"
 SOCIAL_AUTH_FACEBOOK_SECRET = "3c1034e35a6aaf88ffc348de810c545b"
+
+SOCIAL_AUTH_RAISE_EXCEPTIONS = False
+LOGIN_ERROR_URL = '/accounts/login/'
 
 # Application definition
 
@@ -49,7 +53,13 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'crispy_forms',
     'rest_framework',
+    'rest_framework.authtoken',
     'social_django',
+    'django_otp',
+    'django_otp.plugins.otp_totp',
+    'django_otp.plugins.otp_hotp',
+    'django_otp.plugins.otp_static',
+    
 
     
    
@@ -63,9 +73,23 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django_otp.middleware.OTPMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
+    
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ],
+    'DEFAULT_PERMISSIONS_CLASSES':[
+        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.DjangoModelPermissions',
+    ]
+}
 
 ROOT_URLCONF = 'web.urls'
 

@@ -2,6 +2,13 @@
 <html lang="es">
 <head>
 
+  <style>
+    div.row{
+    margin-top:20%;
+  }
+
+  </style>
+
   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width", initial-scale="1.0">
@@ -16,12 +23,7 @@
   <div class="container">  
     
     
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+
 
     <div class="row"  >
 
@@ -32,15 +34,16 @@
           <div class="card-body">
             <h2 ><p style="text-align:center;font-family:monaco;color:black">Ingresa Tus Credenciales</p></h2>
             <hr>
-            <form action="" method="post"  >
+            <form  class="container" action="" method="post"  >
 
-                {% csrf_token %}
+                {% csrf_token %} 
                 {{form  | crispy}}
-                <br>
-                <br>
-                &nbsp;&nbsp;
                 
-                <button type"submit" value="ingresar" class="btn btn-success float-right" >ingresar</button>
+                <br>
+                <br>
+              
+                
+                <button type"submit" value="ingresar" class="btn btn-success float-top" >ingresar</button>
                 &nbsp;
                 <a class="btn btn-success float-left" href="{%url 'inicio'%}" style="color:white" >Inicio</a>
                 &nbsp;
