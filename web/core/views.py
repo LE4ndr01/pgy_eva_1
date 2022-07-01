@@ -1,5 +1,6 @@
 
 from django.shortcuts import redirect, render,get_object_or_404
+from core.services import UtilsOTP
 from .models import Producto, tipo
 from .forms import CustomUserCreationForm,ContactForm,productoform,tipoform
 from django.contrib.auth import login, authenticate
@@ -8,9 +9,23 @@ from django.http import Http404
 from django.contrib.auth.decorators import login_required,permission_required
 from rest_framework import viewsets
 from .serializers import ProductoSerializer
+from django.contrib.auth.models import User
+from rest_framework.decorators import api_view,permission_classes
+from rest_framework.authtoken.models import Token
+from rest_framework.parsers import JSONParser
+from rest_framework.response import Response
+from django.contrib.auth.hashers import check_password
+from rest_framework import status
+from rest_framework.authentication import  TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 
+
+
+
+
+#---------------------------------
 class ProductoViewset(viewsets.ModelViewSet):
     queryset = Producto.objects.all()
     serializer_class = ProductoSerializer
@@ -58,10 +73,8 @@ def venta (request):
     return render(request, 'core/ventasproductos.html',data)
 def seguimiento (request):
     return render(request, 'core/seguimiento.html')
-
 def dashuser (request):
     return render(request, 'core/dashuser.html')
-
 def ordenes (request):
     return render(request, 'core/ordenes.html')
 def formulario (request):

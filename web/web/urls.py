@@ -18,16 +18,35 @@ from django.urls import path,include
 
 from django.conf import settings
 from django.conf.urls.static import static
-
+from two_factor.urls import urlpatterns as tf_urls
 from django.conf.urls.static import static
 from django.conf import settings
+from django_otp.admin import OTPAdminSite
+
+
+#--------------------------------
+
+class OTPAdmin(OTPAdminSite):
+    pass
+
+from django.contrib.auth.models import User
+from django_otp.plugins.otp_totp.models import TOTPDevice
+
+admin_site = OTPAdmin(name='OTPAdmin')
+admin_site.register(User)
+admin_site.register(TOTPDevice)
+#--------------------------------
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
     path('', include('core.urls')),
     path('accounts/',include('django.contrib.auth.urls')),
     path('social-auth/', include('social_django.urls', namespace="social")),
+    path('',include('core.urls')),
+    
    
 ]
 
